@@ -1,12 +1,12 @@
 package com.pluralsight.sneakerdrops.data;
 
 import com.pluralsight.sneakerdrops.models.Sneaker;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 
-public interface SneakerRepository extends CrudRepository<Sneaker, Long> {
+public interface SneakerRepository extends JpaRepository<Sneaker, Long> {
     public List<Sneaker> findByModelContaining(String text);
 
     public List<Sneaker> findByPriceLessThan(double price);
